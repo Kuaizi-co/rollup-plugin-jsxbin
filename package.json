@@ -1,0 +1,42 @@
+{
+  "name": "rollup-plugin-jsxbin",
+  "version": "1.0.0",
+  "description": "Plugin for rollup with covert jsx file to jsxbin",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "typings": "./src/index.ts",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "pretest": "npm run build",
+    "coverage": "npm test -- --coverage",
+    "build": "rollup -c",
+    "prebuild": "rm -rf dist/*",
+    "test": "jest"
+  },
+  "keywords": [
+    "rollup-plugin",
+    "jsxbin",
+    "adobe",
+    "cep"
+  ],
+  "author": "tomieric",
+  "license": "MIT",
+  "dependencies": {
+    "jsxbin": "^1.7.0"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.5",
+    "jest": "^24.8.0",
+    "rollup": "^1.17.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.3"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "dist/index.js"
+    ],
+    "coverageDirectory": "dist/coverage"
+  }
+}
