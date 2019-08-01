@@ -20,14 +20,12 @@ export default function jsxbinRollup() {
       }
 
       fs.writeFileSync(tmpJSXFile, code);
-      console.log(`tmpJSXFile`, tmpJSXFile)
-      console.log(`tmpJSXBinFile`, tmpJSXBinFile)
 
       await jsxbin(tmpJSXFile, tmpJSXBinFile);
 
       const jsxContents: string = fs.readFileSync(tmpJSXBinFile, 'utf8');
-      console.log(jsxContents)
-      // fs.unlinkSync(tmpJSXBinFile);
+      fs.unlinkSync(tmpJSXBinFile);
+      fs.unlinkSync(tmpJSXFile);
 
       return { code: jsxContents };
     }
